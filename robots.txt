@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.allianceicecubes.co.ke/sitemap.xml
