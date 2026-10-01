@@ -21,9 +21,14 @@ if(intro){
     video.addEventListener('ended',finishIntro,{once:true});
     video.addEventListener('error',finishIntro,{once:true});
     video.play().catch(finishIntro);
-    window.setTimeout(finishIntro,15000);
+    window.setTimeout(finishIntro,5000);
   }
 }
+document.querySelectorAll('.mobile-menu').forEach(menu=>{
+  menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.open=false;}));
+  document.addEventListener('keydown',event=>{if(event.key==='Escape')menu.open=false;});
+  document.addEventListener('click',event=>{if(!menu.contains(event.target))menu.open=false;});
+});
 if(header){
   let lastScrollY=window.scrollY;
   window.addEventListener('scroll',()=>{
